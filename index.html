@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedágio Digital | Consulte e pague seus débitos</title>
+  <meta name="description" content="Um único lugar para acessar e controlar seus pagamentos de pedágio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="header-main">
+    <div class="container header-inner">
+      <a href="#" class="logo" id="logo-home">
+        <span class="logo-icon">P</span>
+        <span class="logo-text">Pedágio Digital</span>
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#" data-view="inicio">Início</a></li>
+          <li><a href="#" data-view="inicio">Consultar débitos</a></li>
+          <li><a href="#" data-view="inicio">Como funciona</a></li>
+          <li><a href="#" data-view="inicio">Afiliados</a></li>
+          <li><a href="#" data-view="inicio">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Tela inicial: só o hero -->
+  <main id="view-inicio" class="view view-inicio">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">Pedágio Digital</p>
+          <h1 class="hero-title">
+            DESFRUTE DE TODA<br>
+            A COMODIDADE DO<br>
+            PEDÁGIO <span class="hero-title-highlight">DIGITAL</span>
+          </h1>
+          <p class="hero-subtitle">
+            Um único lugar para acessar e controlar seus pagamentos de pedágio, com rapidez e segurança.
+          </p>
+        </div>
+        <div class="hero-form-wrapper">
+          <div class="card hero-form-card">
+            <h2 class="hero-form-title">Um único lugar para acessar e controlar seus pagamentos.</h2>
+            <form id="form-placa-hero" class="hero-form" autocomplete="off">
+              <label for="placa-hero" class="hero-form-label">DIGITE SUA PLACA</label>
+              <input
+                type="text"
+                id="placa-hero"
+                maxlength="8"
+                class="hero-form-input"
+                placeholder="LOK-1127"
+                autocomplete="off"
+                required
+              >
+              <label class="hero-checkbox">
+                <input type="checkbox" id="termos" required>
+                <span>Aceito os <a href="#" class="link-inline">Termos e Condições de Uso.</a></span>
+              </label>
+              <label class="hero-checkbox">
+                <input type="checkbox" id="privacidade" required>
+                <span>Estou ciente da <a href="#" class="link-inline">Política de Privacidade</a> e me responsabilizo pela veracidade dos dados.</span>
+              </label>
+              <button type="submit" class="btn btn-buscar btn-block hero-submit">
+                Buscar débitos
+              </button>
+            </form>
+            <a href="#" class="hero-link-secundario">Começar agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Página de débitos (igual à segunda imagem) -->
+  <div id="view-debitos" class="view view-debitos" hidden>
+    <header class="debitos-page-header">
+      <button type="button" class="btn-voltar" id="btn-voltar-debitos" aria-label="Voltar">
+        <span class="btn-voltar-icon">&lt;</span>
+      </button>
+      <h1 class="debitos-page-title">Débitos</h1>
+      <span class="debitos-header-spacer" aria-hidden="true"></span>
+    </header>
+
+    <div class="debitos-banner" id="debitos-banner"></div>
+
+    <div class="debitos-content">
+      <div class="container">
+        <div class="debitos-veiculo-card">
+          <div class="debitos-veiculo-label">
+            Seus veículos:
+          </div>
+          <input type="text" class="debitos-placa-display" id="debitos-placa-display" readonly value="" aria-label="Placa do veículo">
+        </div>
+
+        <div class="debitos-card">
+          <div class="debitos-card-head">
+            <h2 class="debitos-titulo">Débitos</h2>
+            <span class="debitos-atualizado" id="debitos-atualizado">—</span>
+          </div>
+          <label class="debitos-select-all">
+            <input type="checkbox" id="debitos-select-all" checked>
+            <span id="debitos-select-all-label">Selecionar 0 passagens em aberto</span>
+          </label>
+          <ul class="debitos-lista" id="debitos-lista"></ul>
+        </div>
+
+      </div>
+
+      <div class="debitos-total-card">
+        <div class="debitos-total-card-inner">
+          <div class="debitos-total-left">
+            <span class="debitos-total-label">Total a pagar: <span class="debitos-total-toggle" aria-hidden="true">▼</span></span>
+            <span class="debitos-total-valor" id="debitos-total-valor">R$ 0,00</span>
+          </div>
+          <button type="button" class="btn btn-continuar" id="btn-continuar">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
